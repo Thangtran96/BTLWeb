@@ -55,5 +55,43 @@ namespace WebTinTuc
             SqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
+
+        public DataTable GetAllTableChuDe()
+        {
+            using (SqlConnection con = GetConnect() )
+            {
+                SqlCommand cmd = new SqlCommand("spChuDe_get", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                con.Close();
+                return dt;
+            }
+        }
+
+        public void InsertBaiViet(string sTieude, string sNoiDung)
+        {
+            using(SqlConnection con = GetConnect())
+            {
+                using (SqlCommand cmd = new SqlCommand("spInsertBaiViet", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlParameter parameter = new SqlParameter();
+                    parameter.ParameterName = "@idBV";
+                    parameter.Value = int.Parse(ExecuteScalar("SELECT COUNT(idBaiViet) FROM tblBaiViet")) + 1;
+                    cmd.Parameters.Add(parameter);
+
+                    parameter = new SqlParameter("@sTieude", sTieude);
+                    cmd.Parameters.Add(parameter);
+
+                    parameter = new SqlParameter("@sNoiDung", sNoiDung);
+                    cmd.Parameters.Add(parameter);
+
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
