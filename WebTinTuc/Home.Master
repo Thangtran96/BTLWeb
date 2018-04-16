@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="WebTinTuc.Home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ASP.net nhom 3</title>
+    <link href="Themes/Styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Home" runat="server">
+        <div id ="menutop">
+            <div id ="menu">
+                <ul>
+                    <li><a href="index.aspx">Trang chủ</a></li>
+                    <asp:Repeater ID="rpChuDe" runat="server">
+                        <ItemTemplate>
+                            <li><a href="#"><%# Eval("sTenChuDe") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <%
+                        if ((Boolean)Session["admin"] == false)
+                        {
+                        %>
+                            <li><a href="login.aspx">Đăng nhập</a></li>
+                    <%
+                        }
+                        else
+                        {
+                        %>
+                            <li><a href="logout.aspx">Thoát</a></li>
+                    <%
+                        } 
+                        %>
+                         
+                  
+                </ul>
+            </div>
+        </div>
+        <div id="maincontent">
+            <div id="rightcontent">
+                <h1>Tiêu đề phải</h1>
+                <div id="noidungRight">
+                    Nội dung bên phải.
+                </div>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="noidungFooter">
+                Copyright ...
+            </div>
+        </div>
+    </form>
+</body>
+</html>
