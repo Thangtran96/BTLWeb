@@ -31,5 +31,10 @@ namespace WebTinTuc
             dt.InsertBaiViet(txtTieuDe.Text, txtNoidung.Text);
             Response.Redirect("index.aspx");
         }
+
+        protected void btCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }
