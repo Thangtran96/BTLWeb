@@ -7,4 +7,15 @@
             <h1><%# Eval("sTieuDe") %></h1>
         </ItemTemplate>
     </asp:Repeater>
+    <div id="noidungContent">
+        <asp:Repeater ID="rpChiTiet" runat="server">
+            <ItemTemplate>
+                <h3 style="color:red"><%#Eval("sTieude") %></h3>
+                <p style="text-align:right;">
+                    Cap nhat : <%# Eval("dNgayViet") %>
+                </p>
+                <%# Eval("sNoiDung") %>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>

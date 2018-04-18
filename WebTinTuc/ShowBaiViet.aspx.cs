@@ -12,7 +12,11 @@ namespace WebTinTuc
         XuLyAddBV dt = new XuLyAddBV();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            int idBaiViet = int.Parse(Request["idBaiViet"]);
+            rpTieuDe.DataSource = dt.GetBaiVietByID(idBaiViet);
+            rpTieuDe.DataBind();
+            rpChiTiet.DataSource = dt.GetBaiVietByID(idBaiViet);
+            rpChiTiet.DataBind();
         }
     }
 }

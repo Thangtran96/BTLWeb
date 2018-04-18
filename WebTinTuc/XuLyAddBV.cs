@@ -123,5 +123,21 @@ namespace WebTinTuc
                 return dt;
             }
         }
+
+       
+        public DataTable GetBaiVietByID(int idBV)
+        {
+            using (SqlConnection con = GetConnect())
+            {
+                SqlCommand cmd = new SqlCommand("spGetNoiDungByID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idBV", idBV);
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                con.Close();
+                return dt;
+            }
+        }
     }
 }
