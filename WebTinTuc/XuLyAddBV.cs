@@ -70,7 +70,7 @@ namespace WebTinTuc
             }
         }
 
-        public void InsertBaiViet(string sTieude, string sNoiDung)
+        public void InsertBaiViet(int idBV,string sTieude, string sNoiDung)
         {
             using(SqlConnection con = GetConnect())
             {
@@ -79,7 +79,7 @@ namespace WebTinTuc
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlParameter parameter = new SqlParameter();
                     parameter.ParameterName = "@idBV";
-                    parameter.Value = int.Parse(ExecuteScalar("SELECT COUNT(idBaiViet) FROM tblBaiViet")) + 1;
+                    parameter.Value = idBV;
                     cmd.Parameters.Add(parameter);
 
                     parameter = new SqlParameter("@sTieude", sTieude);
@@ -91,6 +91,36 @@ namespace WebTinTuc
                     cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
                 }
+            }
+        }
+
+        public DataTable GetTacGiaOfBV(int idBV)
+        {
+            using (SqlConnection con = GetConnect())
+            {
+                SqlCommand cmd = new SqlCommand("spGetTacGiaOfBV", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idBV", idBV);
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                con.Close();
+                return dt;
+            }
+        }
+
+        //using proc
+        public DataTable GetTableProc(string proc)
+        {
+            using (SqlConnection con = GetConnect())
+            {
+                SqlCommand cmd = new SqlCommand(proc, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                con.Close();
+                return dt;
             }
         }
     }

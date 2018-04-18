@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddBaiViet.aspx" />
+    <Content Include="AddTacGia.aspx" />
     <Content Include="ckfinder\bin\Debug\CKFinder.dll" />
     <Content Include="ckfinder\bin\Debug\CKFinder.pdb" />
     <Content Include="ckfinder\bin\Release\CKFinder.dll" />
@@ -657,6 +658,7 @@
     <Content Include="logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Home.Master" />
+    <Content Include="ShowBaiViet.aspx" />
     <Content Include="Upload.ashx" />
     <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="ckfinder\userfiles\.htaccess" />
@@ -679,6 +681,13 @@
     </Compile>
     <Compile Include="AddBaiViet.aspx.designer.cs">
       <DependentUpon>AddBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddTacGia.aspx.cs">
+      <DependentUpon>AddTacGia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTacGia.aspx.designer.cs">
+      <DependentUpon>AddTacGia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -712,6 +721,13 @@
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowBaiViet.aspx.cs">
+      <DependentUpon>ShowBaiViet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowBaiViet.aspx.designer.cs">
+      <DependentUpon>ShowBaiViet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>
     </Compile>

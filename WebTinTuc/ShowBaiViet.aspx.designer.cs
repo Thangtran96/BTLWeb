@@ -10,15 +10,15 @@
 namespace WebTinTuc {
     
     
-    public partial class index {
+    public partial class ShowBaiViet {
         
         /// <summary>
-        /// rpChiTiet control.
+        /// rpTieuDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpChiTiet;
+        protected global::System.Web.UI.WebControls.Repeater rpTieuDe;
     }
 }

@@ -21,6 +21,7 @@
             CKEDITOR.replace('editor1');
         </script> 
         --%>
+ 
         <br /><br />
         <asp:Button ID="btInsert" runat="server" Text="Cập Nhật" Height="30px" Width="150px" OnClick="btInsert_Click" /> <br /><br />
         <asp:Button ID="btCancel" runat="server" Text="Hủy" OnClick="btCancel_Click"  />
