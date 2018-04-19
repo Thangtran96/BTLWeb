@@ -154,5 +154,31 @@ namespace WebTinTuc
                 return dt;
             }
         }
+
+        public void DelBaiViet(int idBV)
+        {
+            SqlConnection con = GetConnect();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("spDelBV", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idBV", idBV);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            cmd.Dispose();
+        }
+
+        public void DuyetBV(int idBV, int idTV)
+        {
+            SqlConnection con = GetConnect();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("spBaiDuyet", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idBV", idBV);
+            cmd.Parameters.AddWithValue("@idTV", idTV);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            cmd.Dispose();
+        }
+
     }
 }

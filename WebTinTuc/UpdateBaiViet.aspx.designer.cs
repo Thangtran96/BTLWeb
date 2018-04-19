@@ -13,39 +13,39 @@ namespace WebTinTuc {
     public partial class UpdateBaiViet {
         
         /// <summary>
-        /// drlChuDe control.
+        /// rpChiTiet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drlChuDe;
+        protected global::System.Web.UI.WebControls.Repeater rpChiTiet;
         
         /// <summary>
-        /// txtTieuDe control.
+        /// btDuyet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTieuDe;
+        protected global::System.Web.UI.WebControls.Button btDuyet;
         
         /// <summary>
-        /// btInsert control.
+        /// btDel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btInsert;
+        protected global::System.Web.UI.WebControls.Button btDel;
         
         /// <summary>
-        /// btCancel control.
+        /// btHuy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCancel;
+        protected global::System.Web.UI.WebControls.Button btHuy;
     }
 }

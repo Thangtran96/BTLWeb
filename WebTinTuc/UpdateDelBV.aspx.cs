@@ -9,9 +9,14 @@ namespace WebTinTuc
 {
     public partial class UpdateDelBV : System.Web.UI.Page
     {
+        XuLyAddBV Xuly = new XuLyAddBV();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //int idTV = int.Parse(Request["idTV"]);
+            //Session["idTV"] = idTV;
+            string sql = "SELECT * FROM dbo.tblBaiViet WHERE idBaiViet NOT IN (SELECT idBaiViet FROM view_BViet_Duyet)";
+            rpChiTiet.DataSource = Xuly.GetTable(sql);
+            rpChiTiet.DataBind();
         }
     }
 }

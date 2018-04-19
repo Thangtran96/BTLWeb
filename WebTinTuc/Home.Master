@@ -32,8 +32,9 @@
                         else
                         {
                         %>
-                            <li><a href="logout.aspx">Thoát</a></li>
                             <li><a href="AddBaiViet.aspx">Them bai viet</a></li>
+                            <li><a href="UpdateDelBV.aspx">Dang & Xoa bai viet</a></li>
+                            <li><a href="logout.aspx">Thoát</a></li>
                     <%
                         } 
                     %>

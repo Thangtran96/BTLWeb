@@ -23,6 +23,9 @@ namespace WebTinTuc
             int kq = dt.Rows.Count;
             if (kq > 0){
                 Session["admin"] = true;
+                int idTV = int.Parse(dt.Rows[0]["idTV"].ToString());
+                Session["idTV"] = idTV;
+                //string url = "index.aspx?idTV=" + idTV;
                 Response.Redirect("index.aspx");
             }
             else {

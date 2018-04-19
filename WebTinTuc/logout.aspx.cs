@@ -12,6 +12,7 @@ namespace WebTinTuc
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["admin"] = false;
+            Session["idTV"] = 0;
             Response.Redirect("index.aspx");
         }
     }

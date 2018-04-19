@@ -2,17 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Sua bản tin cho Website</h1>
+    <h1>Duyet bản tin cho Website</h1>
     <div id="noidungContent">
-        <h4>Chọn chủ đề</h4>
-        <asp:DropDownList ID="drlChuDe" runat="server" Width="100px"></asp:DropDownList>
-        <h4>Tiêu đề bản tin</h4>
-        <asp:TextBox ID="txtTieuDe" runat="server" Width="600px"></asp:TextBox>
-        <h4>Nội dung bản tin</h4>
-        <CKEditor:CKEditorControl ID="txtNoidung" runat="server" Width="620px"></CKEditor:CKEditorControl>
- 
-        <br /><br />
-        <asp:Button ID="btInsert" runat="server" Text="Cập Nhật" Height="30px" Width="150px" OnClick="btInsert_Click" /> <br /><br />
-        <asp:Button ID="btCancel" runat="server" Text="Hủy" OnClick="btCancel_Click"  />
+        <asp:Repeater ID="rpChiTiet" runat="server">
+            <ItemTemplate>
+                <h3 style="color:red"><%#Eval("sTieude") %></h3>
+                <p style="text-align:right;">
+                    Cap nhat : <%# Eval("dNgayViet") %>
+                </p>
+                <%# Eval("sNoiDung") %>
+            </ItemTemplate>
+        </asp:Repeater>
+        <br /><br /> 
+        <asp:Button ID="btDuyet" runat="server" Text="Dang bai" OnClick="btDuyetBV_Click" />
+        <asp:Button ID="btDel" runat="server" Text="Xoa bai Viet" OnClick="btXoaBV_Click" />
+        <asp:Button ID="btHuy" runat="server" Text="Huy" OnClick="btCancel_Click" />
     </div>
 </asp:Content>

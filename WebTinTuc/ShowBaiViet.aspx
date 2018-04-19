@@ -18,4 +18,7 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
+    <br /><br /> 
+    <asp:Button ID="btDel" runat="server" Text="Xoa bai Viet" OnClick="btXoaBV_Click" />
+    <asp:Button ID="btHuy" runat="server" Text="Trang chu" OnClick="btCancel_Click" />
 </asp:Content>

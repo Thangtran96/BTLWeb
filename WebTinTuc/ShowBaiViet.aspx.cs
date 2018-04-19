@@ -17,6 +17,29 @@ namespace WebTinTuc
             rpTieuDe.DataBind();
             rpChiTiet.DataSource = dt.GetBaiVietByID(idBaiViet);
             rpChiTiet.DataBind();
+            bool res = (bool)Session["admin"];
+            if (res)
+            {
+                btDel.Enabled = true;
+                btDel.Visible = true;
+            }
+            else
+            {
+                btDel.Enabled = false;
+                btDel.Visible = false;
+            }
+           
+        }
+        protected void btXoaBV_Click(object sender, EventArgs e)
+        {
+            int idBV = int.Parse(Request["idBaiViet"]);
+            dt.DelBaiViet(idBV);
+            Response.Redirect("UpdateDelBV.aspx");
+        }
+
+        protected void btCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
         }
     }
 }

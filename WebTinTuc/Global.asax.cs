@@ -18,6 +18,7 @@ namespace WebTinTuc
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["admin"] = false;
+            Session["idTV"] = 0;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
