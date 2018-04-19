@@ -662,6 +662,7 @@
     <Content Include="Upload.ashx" />
     <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="ckfinder\userfiles\.htaccess" />
+    <Content Include="XemTheoChuDe.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -730,6 +731,13 @@
     </Compile>
     <Compile Include="Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="XemTheoChuDe.aspx.cs">
+      <DependentUpon>XemTheoChuDe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XemTheoChuDe.aspx.designer.cs">
+      <DependentUpon>XemTheoChuDe.aspx</DependentUpon>
     </Compile>
     <Compile Include="XuLy.cs" />
     <Compile Include="XuLyAddBV.cs" />

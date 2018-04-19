@@ -35,6 +35,9 @@ namespace WebTinTuc
             int idBV = int.Parse(xlbv.ExecuteScalar("SELECT COUNT(idBaiViet) FROM tblBaiViet")) + 1;
             Session["idBV"] = idBV;
             xlbv.InsertBaiViet(idBV, txtTieuDe.Text, txtNoidung.Text);
+            int idChuDe = int.Parse(drlChuDe.SelectedValue.ToString());
+            string sql = "INSERT INTO dbo.tblChuDeBaiViet (idBaiViet, idChuDe) VALUES(" + idBV + " , " + idChuDe + ")";
+            xlbv.ExeCuteNonquery(sql);
             Response.Redirect("AddTacGia.aspx");
         }
 

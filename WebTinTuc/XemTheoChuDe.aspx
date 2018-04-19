@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebTinTuc.index" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="XemTheoChuDe.aspx.cs" Inherits="WebTinTuc.XemTheoChuDe" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,7 +8,7 @@
             <ItemTemplate>
                 <ul>
                     <li>
-                        <a href="ShowBaiViet.aspx?idBaiViet=<%# Eval("idBaiViet") %>">  <%#Eval("sTieude") %> </a>
+                        <a href="ShowBaiViet.aspx?idBaiViet=<%# Eval("idBaiViet") %> ">  <%#Eval("sTieude") %> </a>
                     </li>
                 </ul>
             </ItemTemplate>
