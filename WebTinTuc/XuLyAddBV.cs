@@ -139,5 +139,20 @@ namespace WebTinTuc
                 return dt;
             }
         }
+
+        public DataTable GetBaiVietTheoChuDe(int idChuDe)
+        {
+            using (SqlConnection con = GetConnect())
+            {
+                SqlCommand cmd = new SqlCommand("spGetBVTheoChuDe", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idChuDe", idChuDe);
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                con.Close();
+                return dt;
+            }
+        }
     }
 }

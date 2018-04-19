@@ -18,24 +18,24 @@
                     <li><a href="index.aspx">Trang chủ</a></li>
                     <asp:Repeater ID="rpChuDe" runat="server">
                         <ItemTemplate>
-                            <li><a href="ShowBaiViet.aspx?idChuDe=<%# Eval("idChuDe") %>"><%# Eval("sTenChuDe") %></a></li>
+                            <li><a href="XemTheoChuDe.aspx?idChuDe=<%# Eval("idChuDe") %>"><%# Eval("sTenChuDe") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                     <%
                         if ((Boolean)Session["admin"] == false)
                         {
-                        %>
+                    %>
                             <li><a href="login.aspx">Đăng nhập</a></li>
-                            <li><a href="AddBaiViet.aspx">AddBaiViet.aspx</a></li>
-                    <%
+                        <%
                         }
                         else
                         {
                         %>
                             <li><a href="logout.aspx">Thoát</a></li>
+                            <li><a href="AddBaiViet.aspx">Them bai viet</a></li>
                     <%
                         } 
-                        %>
+                    %>
                          
                   
                 </ul>
