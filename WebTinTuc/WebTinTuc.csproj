@@ -653,12 +653,15 @@
     <Content Include="ckfinder\skins\v1\skin.js" />
     <Content Include="ckfinder\skins\v1\uipanel.css" />
     <Content Include="ckfinder\translations.txt" />
+    <Content Include="dangky.aspx" />
     <Content Include="Global.asax" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Home.Master" />
     <Content Include="ShowBaiViet.aspx" />
+    <Content Include="UpdateBaiViet.aspx" />
+    <Content Include="UpdateDelBV.aspx" />
     <Content Include="Upload.ashx" />
     <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="ckfinder\userfiles\.htaccess" />
@@ -689,6 +692,13 @@
     </Compile>
     <Compile Include="AddTacGia.aspx.designer.cs">
       <DependentUpon>AddTacGia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dangky.aspx.cs">
+      <DependentUpon>dangky.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dangky.aspx.designer.cs">
+      <DependentUpon>dangky.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -728,6 +738,20 @@
     </Compile>
     <Compile Include="ShowBaiViet.aspx.designer.cs">
       <DependentUpon>ShowBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBaiViet.aspx.cs">
+      <DependentUpon>UpdateBaiViet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateBaiViet.aspx.designer.cs">
+      <DependentUpon>UpdateBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDelBV.aspx.cs">
+      <DependentUpon>UpdateDelBV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDelBV.aspx.designer.cs">
+      <DependentUpon>UpdateDelBV.aspx</DependentUpon>
     </Compile>
     <Compile Include="Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>

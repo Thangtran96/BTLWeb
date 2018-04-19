@@ -68,6 +68,7 @@ namespace BTLWebTinTuc_Nhom3
         }
 
 
+        // dang nhap
         public static DataTable getTaiKhoan(string tk, string mk)
         {
             string connect = connectTG();
@@ -93,32 +94,26 @@ namespace BTLWebTinTuc_Nhom3
             }//cnn
         }
 
-        /*
-        static public void getTaiKhoan(string tk, string mk)
+        // dang ky
+        static public void dangkyTaiKhoan(string tk, string mk, string hoten, string email, string sdt)
         {
             string connect = connectTG();
             using (SqlConnection cnn = new SqlConnection(connect))
             {
-                using (SqlCommand cmd = new SqlCommand("spTaiKhoan_get", cnn))
+                using (SqlCommand cmd = new SqlCommand("spTaiKhoan_insertBanDoc", cnn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@tk", tk);
                     cmd.Parameters.AddWithValue("@mk", mk);
+                    cmd.Parameters.AddWithValue("@tenTV", hoten);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@SDT", sdt);
                     cnn.Open();
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery(); ;
                     cnn.Close();
                 }//cmd
             }//cnn
         }
-        */
-
-
-
-
-
-
     }
-
-
 }
